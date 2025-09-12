@@ -11,6 +11,11 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
 ![H2](https://img.shields.io/badge/H2-2.2-green)
 
+<details>
+<summary>
+    📋<strong>Mostrar consigna completa</strong>
+</summary>
+
 ## ⚠️ Importante: Antes de Comenzar
 
 1. **Lectura Completa**
@@ -93,10 +98,6 @@ git push -u origin develop
 
 > 💡 **Nota**: Aunque este trabajo se realiza individualmente, se utilizan Pull Requests para mantener un historial de cambios ordenado y seguir buenas prácticas de desarrollo. Los Pull Requests serán auto-aprobados por el mismo estudiante.
 
-## 🎯 Objetivo General
-
-Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, implementando diferentes profiles para trabajar con múltiples bases de datos (H2, MySQL y PostgreSQL). El sistema deberá manejar empleados, departamentos y proyectos, utilizando Docker para containerizar las bases de datos y aplicando las mejores prácticas de JPA.
-
 ## ⏰ Tiempo Estimado y Entrega
 
 - **Tiempo estimado de realización:** 30-35 horas
@@ -108,10 +109,6 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 - Docker, Testing y documentación: 7-8 horas
 
 > 💡 **Nota**: Esta estimación considera la complejidad de configurar múltiples bases de datos, Docker y el aprendizaje de JPA. El tiempo incluye la configuración de profiles y la containerización de las bases de datos.
-
-## 👨‍🎓 Información del Alumno
-- **Nombre y Apellido**: [Nombre y Apellido del Alumno]
-- **Legajo**: [Número de Legajo]
 
 > ⚠️ **IMPORTANTE**: Este trabajo práctico se realiza **INDIVIDUALMENTE**. Aunque se utilizan herramientas de colaboración como Pull Requests y Code Review, estas son para mantener buenas prácticas de desarrollo y un historial ordenado. Todo el desarrollo debe ser realizado por el mismo estudiante.
 
@@ -1062,3 +1059,16 @@ Cada archivo debe seguir este formato:
 ## 📝 Licencia
 
 Este trabajo es parte del curso de Programación II de Ingeniería en Informática. Uso educativo únicamente.
+</details>
+
+## 📑 Índice
+- [🎯 Objetivo General](#-objetivo-general)
+- [👨‍🎓 Información del Alumno](#-información-del-alumno)
+
+## 🎯 Objetivo General
+
+Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, implementando diferentes profiles para trabajar con múltiples bases de datos (H2, MySQL y PostgreSQL). El sistema deberá manejar empleados, departamentos y proyectos, utilizando Docker para containerizar las bases de datos y aplicando las mejores prácticas de JPA.
+
+## 👨‍🎓 Información del Alumno
+- **Nombre y Apellido**: Abel Carrizo
+- **Legajo**: 59164
