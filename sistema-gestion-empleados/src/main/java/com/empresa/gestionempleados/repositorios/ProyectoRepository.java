@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ProyectoRepository extends JpaRepository<Proyecto, Long> {
-    List<Proyecto> findByEstado(String estado);
-    List<Proyecto> findByEmpleadosContaining(Empleado empleado);
+
+    @Query("SELECT p FROM Proyecto p WHERE p.fechaFin > :hoy")
+    List<Proyecto> findProyectosActivos(LocalDate hoy);
 }
