@@ -2,11 +2,13 @@ spring:
   config:
     activate:
       on-profile: postgres
+
   datasource:
     url: jdbc:postgresql://localhost:5432/empleados_db
     driver-class-name: org.postgresql.Driver
     username: empleados_user
     password: empleados_pass
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,3 +17,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
+
+# Solo levantar contenedor Postgres
+docker:
+  compose:
+    profiles:
+      active: postgres

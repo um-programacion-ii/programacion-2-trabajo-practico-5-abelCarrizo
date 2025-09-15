@@ -2,11 +2,13 @@ spring:
   config:
     activate:
       on-profile: mysql
+
   datasource:
     url: jdbc:mysql://localhost:3306/empleados_db?useSSL=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: empleados_user
     password: empleados_pass
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -15,3 +17,9 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         format_sql: true
+
+# Solo levantar contenedor MySQL
+docker:
+  compose:
+    profiles:
+      active: mysql
