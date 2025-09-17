@@ -1072,3 +1072,114 @@ Desarrollar un sistema de gestión de empleados utilizando Spring Boot con JPA, 
 ## 👨‍🎓 Información del Alumno
 - **Nombre y Apellido**: Abel Carrizo
 - **Legajo**: 59164
+
+
+## Proceso de ejecución
+
+### 1. Verificar contenedores en ejecución
+
+```bash
+docker ps
+````
+
+Si hay contenedores activos de MySQL o PostgreSQL, detenerlos:
+
+```bash
+docker stop empleados_mysql empleados_postgres
+```
+
+---
+
+### 2. Ejecutar con MySQL
+
+Levantar contenedor MySQL:
+
+```bash
+docker start empleados_mysql
+```
+
+Ejecutar el proyecto con perfil MySQL:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=mysql
+```
+
+---
+
+### 3. Ejecutar con PostgreSQL
+
+Detener MySQL si está corriendo:
+
+```bash
+docker stop empleados_mysql
+```
+
+Levantar contenedor PostgreSQL:
+
+```bash
+docker start empleados_postgres
+```
+
+Ejecutar el proyecto con perfil PostgreSQL:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=postgres
+```
+
+Ejecutar tests:
+
+```bash
+mvn test -Dspring.profiles.active=postgres
+```
+
+---
+
+### 4. Ejecutar con H2 (dev)
+
+El perfil `dev` utiliza H2 en memoria, ideal para desarrollo rápido:
+
+```bash
+mvn spring-boot:run -Dspring-boot.run.profiles=dev
+```
+
+Ejecutar tests:
+
+```bash
+mvn test -Dspring.profiles.active=dev
+```
+
+---
+
+## Endpoints principales
+
+Una vez que el proyecto este ejecutado puedes acceder a los endpoints presentados a traves del siguiente enlace:
+```http://localhost:8080/[endpoints]```
+
+| Método | Endpoint                               | Descripción                                     |
+| ------ | -------------------------------------- | ----------------------------------------------- |
+| GET    | `/api/empleados`                       | Obtener todos los empleados                     |
+| GET    | `/api/empleados/{id}`                  | Obtener empleado por ID                         |
+| POST   | `/api/empleados`                       | Crear un nuevo empleado                         |
+| PUT    | `/api/empleados/{id}`                  | Actualizar un empleado existente                |
+| DELETE | `/api/empleados/{id}`                  | Eliminar un empleado                            |
+| GET    | `/api/empleados/departamento/{nombre}` | Obtener empleados de un departamento            |
+| GET    | `/api/empleados/salario?min=X&max=Y`   | Obtener empleados cuyo salario esté entre X y Y |
+
+---
+
+## Testing
+
+* Para ejecutar todos los tests:
+
+```bash
+mvn test
+```
+
+## Notas importantes
+
+* Solo un contenedor de base de datos debe estar activo al mismo tiempo para evitar conflictos de puerto.
+* Para cambiar de base de datos, **detener el contenedor actual**, levantar el nuevo y ejecutar el proyecto con el perfil correspondiente.
+* Las credenciales de las bases de datos están configuradas en `application-mysql.yml` y `application-postgres.yml`.
+
+
+

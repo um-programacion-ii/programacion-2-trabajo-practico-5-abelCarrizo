@@ -22,7 +22,7 @@ spring:
       hibernate:
         format_sql: true
 
-# No se activa Docker Compose en dev
-docker:
-  compose:
-    enabled: false
+  # No se activa Docker Compose en dev
+  docker:
+    compose:
+      enabled: false
